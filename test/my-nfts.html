@@ -144,12 +144,12 @@
         }
 
         try {
-          messageDiv.innerHTML = "<p>listing NFT for sale...</p>";
+          messageDiv.innerHTML = "<p>Listing NFT for sale...</p>";
           const response = await axios.post(
             "http://localhost:5000/api/marketplace/list-item",
             {
               tokenId: tokenId,
-              price: web3.utils.toWei(price.toString(), "ether"),
+              price: price,
               seller: userAccount,
             }
           );
