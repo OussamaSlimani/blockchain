@@ -54,7 +54,7 @@
       async function fetchUnsoldNFTs() {
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/marketplace/unsold-items"
+            "https://blockchain-tul0.onrender.com/api/marketplace/unsold-items"
           );
 
           if (response.data.success) {
@@ -68,7 +68,7 @@
             } else {
               unsoldItems.forEach(async (nft) => {
                 const tokenURIResponse = await axios.get(
-                  `http://localhost:5000/api/marketplace/token-uri/${nft.tokenId}`
+                  `https://blockchain-tul0.onrender.com/api/marketplace/token-uri/${nft.tokenId}`
                 );
 
                 if (tokenURIResponse.data.success) {
@@ -117,7 +117,7 @@
 
         try {
           const response = await axios.post(
-            "http://localhost:5000/api/marketplace/buy-item",
+            "https://blockchain-tul0.onrender.com/api/marketplace/buy-item",
             {
               tokenId: tokenId,
               price: price,
